@@ -1,0 +1,86 @@
+
+ <h3>Data Binding</h3>
+<h2>{{name}}</h2>
+
+<h3>Attribute binding</h3>
+<button>
+<a [href]="Link">Go To Th Gogle</a>
+</button>
+
+<br>
+<hr>
+<h2>Event Binding</h2>
+<button (click)="onsubmited()" class="btn btn-denger">Submit</button>
+
+<br>
+<hr>
+<h2>Two Way Data Binding</h2>
+Enter Name:
+<input type="text" value="firstname" [(ngModel)]="firstname" >
+<br>
+Your Name is {{firstname}}
+<div class="container">
+<h2>Directive </h2>
+<h3>ngIf</h3>
+<div *ngIf="age>20">
+List of age
+</div>
+<hr>
+<h3>nfFor </h3>
+<table class="table">
+    <tr>
+        <th>prodect Image</th>
+        <th>Product Named</th>
+        <th>Product Id</th>
+        <th>Product Salary</th>
+    </tr>
+    <tr *ngFor="let nm of EmpData">
+        <td><img src="{{nm.img}}" width="80" alt=""></td>
+        <td>{{nm.name}}</td>
+        <td>{{nm.id}}</td>
+        <td>{{nm.salary}}</td>
+    </tr>
+
+</table>
+<Br>
+    <hr>
+    <h4>example 2 ng for</h4>
+<ul>
+    <li *ngFor="let array of arrays">
+{{array}}
+    </li>
+</ul>
+    <select class="form-control">
+        <option *ngFor="let arrray of arrays">
+            {{arrray}}
+        </option>
+    </select>
+<hr>
+<Br>
+
+<h3>ngSwitch</h3>
+
+<div [ngSwitch]="choose">
+    <div *ngSwitchCase="1">you pick one</div>
+    <div *ngSwitchCase="2">You pick two</div>
+    <div *ngSwitchCase="3">You pick three</div>
+
+</div>
+
+
+<hr>
+<br>
+<h3>Inline ngStyle</h3>
+<button [ngStyle]="{'font-size':'20px','font-style':'italic','color':'red'}">NGSTYLE</button>
+<hr>
+<h3>External ngStyle</h3>
+<button [ngStyle]="addstyle()">NGSTYLE</button>
+
+<br>
+<br>
+<hr>
+<h3>NgClass</h3>
+<button [ngClass]="['btn-bold','btn-italic','btn-green']">NGCLASS</button>
+
+</div>
+

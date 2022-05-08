@@ -1,0 +1,45 @@
+
+
+<div class="container" >
+    <h2 style="font-family: italic;">Reactive Form</h2>
+    <form [formGroup]="myForm" (ngSubmit)="OnSubmited()">
+        <div class="form-group">
+            <label for="fname"> Student Name: </label>
+            <input type="text" class="form-control" formControlName="sfname" required [ngClass]="{'is-invalid': isSubmitted && f.sfname.errors}" placeholder="Enter Your Name">
+
+          <div *ngIf="isSubmitted && f.sfname.errors?.required" class="isinvalid-feedback"><span style="color: red;"> First Is Required*</span></div>
+        </div>
+        <br>
+
+        <div class="form-group">
+            <label for="slname"> Student Last Name:</label>
+            <input type="text" class="form-control" formControlName="slname" required [ngClass]="{'is-invalid': isSubmitted && f.slname.errors}" placeholder="Enter Yor Lasr Name">
+            <div *ngIf="isSubmitted && f.slname.errors?.required" class="isinvalid-feedback"><span style="color: red;"> Last  Is Required*</span></div>
+        </div>
+        <br>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" formControlName="email" required [ngClass]="{'is-invalid': isSubmitted && f.email.errors}" placeholder="Enter Yor Lasr Name">
+            <div *ngIf="isSubmitted && f.email.errors?.required" class="isinvalid-feedback"><span style="color: red;"> Email  Is Required*</span></div>
+            <div *ngIf="isSubmitted && f.email.errors?.email" class="isinvalid-feedback"><span style="color: red;">Please Enter Valid Email</span></div>
+        </div>
+        <br>
+
+        <div class="form-group">
+            <label for="sphone">Student Mobile Number :</label>
+            <input type="number" class="form-control" formControlName="sphone" required [ngClass]="{'is-invalid': isSubmitted && f.sphone.errors}" placeholder="Enter Yor Lasr Name">
+            <div *ngIf="isSubmitted && f.sphone.errors?.required" class="isinvalid-feedback"><span style="color: red;"> mobbile num xIs Required*</span></div>
+        </div>
+        <br>
+
+        <div class="form-group">
+            <label for="spass">Student Password:</label>
+            <input type="password" class="form-control" formControlName="spass" required [ngClass]="{'is-invalid': isSubmitted && f.spass.errors}" placeholder="Enter Yor Lasr Name">
+            <div *ngIf="isSubmitted && f.spass.errors?.required" class="isinvalid-feedback"><span style="color: red;"> student Password Is Required*</span></div>
+            <div *ngIf="isSubmitted && f.pass.errors.minlength" class="invalid-feedback">Password at least 8 character.</div>
+        </div>
+        <br>
+        <button class="btn btn-success">Submit</button>
+    </form>
+</div>
